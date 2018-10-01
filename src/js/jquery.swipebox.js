@@ -68,6 +68,8 @@
 
 			plugin.settings = $.extend( {}, defaults, options );
 
+			selector = plugin.settings.selector;
+
 			if ( $.isArray( elem ) ) {
 
 				elements = elem;
@@ -114,7 +116,8 @@
 					$elem.each( function() {
 
 						var title = null,
-							href = null;
+							href = null,
+							description = null;
 
 						if ( $( this ).attr( 'title' ) ) {
 							title = $( this ).attr( 'title' );
@@ -125,9 +128,14 @@
 							href = $( this ).attr( 'href' );
 						}
 
+						if ( $( this ).attr( 'data-description' ) ) {
+							description = $( this ).attr( 'data-description' );
+						}
+
 						elements.push( {
 							href: href,
-							title: title
+							title: title,
+							description: description
 						} );
 					} );
 
@@ -706,17 +714,30 @@
 			 * Set link title attribute as caption
 			 */
 			setTitle : function ( index ) {
-				var title = null;
+				var title = null,
+					description = null,
+					html = "";
 
 				$( '#swipebox-title' ).empty();
 
 				if ( elements[ index ] !== undefined ) {
 					title = elements[ index ].title;
+					description = elements[ index ].description;
 				}
 
-				if ( title ) {
+				if ( title || description ) {
+					
+					if( title )
+						html += "<strong>" + title + "</strong>";
+
+					if( title && description )
+						html += "<br />";
+
+					if( description )
+						html += description;
+
 					$( '#swipebox-top-bar' ).show();
-					$( '#swipebox-title' ).append( title );
+					$( '#swipebox-title' ).append( html );
 				} else {
 					$( '#swipebox-top-bar' ).hide();
 				}

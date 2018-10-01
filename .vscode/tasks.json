@@ -1,0 +1,13 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Grunt",
+      "command": "grunt",
+      "type": "shell",
+      "options": {
+        "cwd": "${workspaceRoot}/grunt"
+      }
+    }
+  ]
+}

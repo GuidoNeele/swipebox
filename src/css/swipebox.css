@@ -112,17 +112,19 @@ html.swipebox-html.swipebox-touch {
 }
 
 #swipebox-top-bar {
-  top: -50px;
+  top: -100px;
 }
 #swipebox-top-bar.visible-bars {
-  -webkit-transform: translate3d(0, 50px, 0);
-          transform: translate3d(0, 50px, 0);
+  -webkit-transform: translate3d(0, 100px, 0);
+          transform: translate3d(0, 100px, 0);
 }
 
 #swipebox-title {
   display: block;
-  width: 100%;
+  width: 92%;
+  max-width: 800px;
   text-align: center;
+  margin: 0 auto;
 }
 
 #swipebox-prev,
@@ -184,9 +186,9 @@ html.swipebox-html.swipebox-touch {
 .swipebox-touch #swipebox-container:before, .swipebox-touch #swipebox-container:after {
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
-  -webkit-transition: all .3s ease;
-          transition: all .3s ease;
-  content: ' ';
+  -webkit-transition: all 0.3s ease;
+          transition: all 0.3s ease;
+  content: " ";
   position: absolute;
   z-index: 999;
   top: 0;
@@ -215,11 +217,9 @@ html.swipebox-html.swipebox-touch {
   0% {
     left: 0;
   }
-
   50% {
     left: -30px;
   }
-
   100% {
     left: 0;
   }
@@ -229,11 +229,9 @@ html.swipebox-html.swipebox-touch {
   0% {
     left: 0;
   }
-
   50% {
     left: -30px;
   }
-
   100% {
     left: 0;
   }
@@ -242,11 +240,9 @@ html.swipebox-html.swipebox-touch {
   0% {
     left: 0;
   }
-
   50% {
     left: 30px;
   }
-
   100% {
     left: 0;
   }
@@ -255,11 +251,9 @@ html.swipebox-html.swipebox-touch {
   0% {
     left: 0;
   }
-
   50% {
     left: 30px;
   }
-
   100% {
     left: 0;
   }
@@ -288,8 +282,8 @@ html.swipebox-html.swipebox-touch {
 }
 
 #swipebox-top-bar {
+  margin-top: 5px;
   color: white !important;
   font-size: 15px;
-  line-height: 43px;
   font-family: Helvetica, Arial, sans-serif;
 }
